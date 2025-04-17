@@ -1,5 +1,8 @@
-package model;
+package com.brunomarques.contasfavoritas.model;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class ContaFavorita {
 
     private Long id;
