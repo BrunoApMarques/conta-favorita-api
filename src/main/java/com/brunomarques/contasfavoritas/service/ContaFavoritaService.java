@@ -2,16 +2,13 @@ package com.brunomarques.contasfavoritas.service;
 
 import com.brunomarques.contasfavoritas.model.ContaFavorita;
 import com.brunomarques.contasfavoritas.repository.ContaFavoritaRepository;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Getter
-@Setter
+
 @Service
 public class ContaFavoritaService {
 
@@ -27,7 +24,12 @@ public class ContaFavoritaService {
         return conta.orElse(null);
     }
 
-    public ContaFavorita salvar(ContaFavorita contaFavorita) {
+    public ContaFavorita salvar(ContaFavorita conta) {
+
+        return repository.save(conta);
+    }
+
+    public ContaFavorita criarContaFavorita(ContaFavorita contaFavorita) {
         return repository.save(contaFavorita);
     }
 
